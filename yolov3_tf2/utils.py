@@ -41,8 +41,8 @@ def load_darknet_weights(model, weights_file, tiny=False):
                     sub_model.layers[i + 1].name.startswith('batch_norm'):
                 batch_norm = sub_model.layers[i + 1]
 
-            logging.info("{}/{} {}".format(
-                sub_model.name, layer.name, 'bn' if batch_norm else 'bias'))
+            # logging.info("{}/{} {}".format(
+            #     sub_model.name, layer.name, 'bn' if batch_norm else 'bias'))
 
             filters = layer.filters
             size = layer.kernel_size[0]

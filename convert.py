@@ -20,18 +20,18 @@ def main(_argv):
         yolo = YoloV3Tiny(classes=FLAGS.num_classes)
     else:
         yolo = YoloV3(classes=FLAGS.num_classes)
-    yolo.summary()
-    logging.info('model created')
+    # yolo.summary()
+    # logging.info('model created')
 
     load_darknet_weights(yolo, FLAGS.weights, FLAGS.tiny)
-    logging.info('weights loaded')
+    # logging.info('weights loaded')
 
     img = np.random.random((1, 320, 320, 3)).astype(np.float32)
     output = yolo(img)
-    logging.info('sanity check passed')
+    # logging.info('sanity check passed')
 
     yolo.save_weights(FLAGS.output)
-    logging.info('weights saved')
+    # logging.info('weights saved')
 
 
 if __name__ == '__main__':
